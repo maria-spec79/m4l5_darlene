@@ -8,49 +8,49 @@ const concatCss = require ('gulp-concat-css');
 const csso = require ('gulp-csso');
 
 function minipic(done) {
-	return src('3/images/*.png')
+	return src('src/images/*.png')
 	.pipe(imagemin())
-	.pipe(dest('dist'))
+	.pipe(dest('dist/images'))
 	};
-//exports.default = minipic;
+exports.minipic = minipic;
 
 function createsprite(done) {
-    var spriteData = src('dist/*.png')
+    let spriteData = src('dist/images/*.png')
     .pipe(spritesmith({
-    	imgName: 'sprite4.png',
-    	imgPath: 'imgs/sprite4.png',
-        cssName: 'sprite4.css',
+    	imgName: 'sprite_pic.png',
+    	imgPath: 'dist/images/sprite_pic.png',
+        cssName: 'sprite_pic.css',
         algorithm: "left-right",
         padding: 5
         }));
 
-	var stylStream = spriteData.img.pipe(dest('imgs'));
-	var imgStream = spriteData.css.pipe(dest('styles'));
+	let stylStream = spriteData.img.pipe(dest('dist/images'));
+	let imgStream = spriteData.css.pipe(dest('src'));
 	return (imgStream, stylStream);
 };
-//exports.default = createsprite;
+exports.createsprite = createsprite;
 
 function minihtml(done) {
-	return src('3/index.html')
+	return src('src/index.html')
 	.pipe(htmlmin({
 		collapseWhitespace: true,
     	removeComments: true
 	}))
-	.pipe(dest('dist'))
+	.pipe(dest('./'))
 };
-watch(['3/index.html'], minihtml);
-//exports.default = minihtml;
+//watch(['src/index.html'], minihtml);
+exports.minihtml = minihtml;
 
 function union(done) {
-	return src('styles/*.css')
+	return src('src/*.css')
 	.pipe(concatCss('unistyle.css'))
-	.pipe(dest('3'))
+	.pipe(dest('dist'))
 };
 
 function minicss(done) {
-	return src('3/unistyle.css')
+	return src('dist/unistyle.css')
 	.pipe(csso())
-	.pipe(dest('dist'))
+	.pipe(dest('./'))
 };
 
-//exports.default = series(union, minicss);
+exports.default = series(union, minicss);

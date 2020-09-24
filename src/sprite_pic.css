@@ -1,0 +1,76 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon {
+  display: inline-block;
+}
+
+.icon-blog1 {
+  background-image: url(dist/images/sprite_pic.png);
+  background-position: -1176px 0px;
+  width: 395px;
+  height: 302px;
+}
+.icon-blog2 {
+  background-image: url(dist/images/sprite_pic.png);
+  background-position: -1576px 0px;
+  width: 395px;
+  height: 302px;
+}
+.icon-main-photo {
+  background-image: url(dist/images/sprite_pic.png);
+  background-position: -2378px 0px;
+  width: 457px;
+  height: 639px;
+}
+.icon-portfolio1 {
+  background-image: url(dist/images/sprite_pic.png);
+  background-position: -1976px 0px;
+  width: 397px;
+  height: 636px;
+}
+.icon-portfolio2 {
+  background-image: url(dist/images/sprite_pic.png);
+  background-position: 0px 0px;
+  width: 289px;
+  height: 306px;
+}
+.icon-portfolio3 {
+  background-image: url(dist/images/sprite_pic.png);
+  background-position: -294px 0px;
+  width: 289px;
+  height: 306px;
+}
+.icon-portfolio4 {
+  background-image: url(dist/images/sprite_pic.png);
+  background-position: -588px 0px;
+  width: 289px;
+  height: 306px;
+}
+.icon-portfolio5 {
+  background-image: url(dist/images/sprite_pic.png);
+  background-position: -882px 0px;
+  width: 289px;
+  height: 306px;
+}
+.icon-sprite_pic {
+  background-image: url(dist/images/sprite_pic.png);
+  background-position: -2840px 0px;
+  width: 2835px;
+  height: 639px;
+}
